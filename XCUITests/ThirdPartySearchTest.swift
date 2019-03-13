@@ -36,6 +36,7 @@ class ThirdPartySearchTest: BaseTestCase {
         waitForExistence(app.textFields["url"], timeout: 3)
         app.textFields["url"].tap()
         app.typeText("window")
+        waitForValueContains(app.textFields["address"], value: "window")
         app.scrollViews.otherElements.buttons["developer.mozilla.org search"].tap()
 
         var url = app.textFields["url"].value as! String
@@ -102,6 +103,7 @@ class ThirdPartySearchTest: BaseTestCase {
         waitForExistence(app.textFields["url"], timeout: 3)
         app.textFields["url"].tap()
         app.typeText("window")
+        waitForValueContains(app.textFields["url"], value: "window")
 
         // For timing issue, we need a wait statement
         waitForExistence(app.scrollViews.otherElements.buttons["developer.mozilla.org search"])
